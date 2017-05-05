@@ -1,0 +1,88 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix hydra: <https://www.w3.org/ns/hydra/core#>.
+@prefix void: <http://rdfs.org/ns/void#>.
+@prefix vann: <http://purl.org/vocab/vann/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix sd: <http://www.w3.org/TR/sparql11-service-description/#>.
+@prefix om: <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
+
+# ---------------------------------------- Metadata ----------------------------------------------
+
+<http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>
+    a owl:Ontology;
+    vann:preferredNamespacePrefix "om";
+    vann:preferredNamespaceUri "http://linkedsoftwaredependencies.org/vocabulary/object-mapping#";
+    rdfs:label "Object Mapping."@en;
+    rdfs:comment "RDF vocabulary for describing Object Mappings."@en;
+    dct:title "Object Mapping"@en;
+    dct:issued "2017-05-05"^^xsd:date;
+    dct:modified "2017-05-05"^^xsd:date;
+    dct:creator [foaf:mbox "Ruben.Taelman@UGent.be"; foaf:name "Ruben Taelman"].
+
+# ------------------------------------------ Classes --------------------------------------------
+
+om:ObjectMap a rdfs:Class;
+    rdfs:label "Object Map"@en;
+    rdfs:comment "An object mapping definition can have object map entries."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
+
+om:ArrayMap a rdfs:Class;
+    rdfs:label "Array Map"@en;
+    rdfs:comment "An array mapping definition can have array map entries."@en;
+    rdfs:subClassOf om:Object;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
+
+om:ObjectMapEntry a rdfs:Class;
+    rdfs:label "Object Map Entry"@en;
+    rdfs:comment "An object map entry refers to one or more object entries with keys and values."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
+
+om:ObjectMapEntryDynamic a rdfs:Class;
+    rdfs:label "Dynamuc Object Map"@en;
+    rdfs:comment "A dynamic object map entry refers to one or more object entries where keys and values are dynamically fed in by a object map."@en;
+    rdfs:subClassOf om:ObjectMapEntry;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
+
+om:ArrayMapEntry a rdfs:Class;
+    rdfs:label "Arrat Map Entry"@en;
+    rdfs:comment "An array map entry refers to one or more array entries with values."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
+
+# ---------------------------------------- Properties --------------------------------------------
+
+om:field a rdf:Property;
+    rdfs:label "has field"@en;
+    rdfs:comment "The given object map has the given object map entry."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>;
+    rdfs:domain om:ObjectMap;
+    rdfs:range om:ObjectMapEntry.
+
+om:element a rdf:Property;
+    rdfs:label "has element"@en;
+    rdfs:comment "The given array map has the given array map entry."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>;
+    rdfs:domain om:ArrayMap;
+    rdfs:range om:ArrayMapEntry.
+
+om:fieldName a rdf:Property;
+    rdfs:label "has name"@en;
+    rdfs:comment "The given map entry has the given field name, which can either be a literal or an object map URI."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>;
+    rdfs:domain om:ObjectMapEntry.
+
+om:fieldValue a rdf:Property;
+    rdfs:label "has value"@en;
+    rdfs:comment "The given map entry has the given field value, which can either be a literal or an object map URI."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>;
+    rdfs:domain om:ObjectMapEntry.
+
+om:dynamicEntry a rdf:Property;
+    rdfs:label "has value"@en;
+    rdfs:comment "The given map entry must receive entries from the given map."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>;
+    rdfs:domain om:ObjectMapEntryDynamic;
+    rdfs:range om:ObjectMap.
