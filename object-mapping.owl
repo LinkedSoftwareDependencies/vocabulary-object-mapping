@@ -33,7 +33,7 @@ om:ObjectMap a rdfs:Class;
 om:ArrayMap a rdfs:Class;
     rdfs:label "Array Map"@en;
     rdfs:comment "An array mapping definition can have array map entries."@en;
-    rdfs:subClassOf om:Object;
+    rdfs:subClassOf om:ObjectMap;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
 
 om:ObjectMapEntry a rdfs:Class;
@@ -42,13 +42,13 @@ om:ObjectMapEntry a rdfs:Class;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
 
 om:ObjectMapEntryDynamic a rdfs:Class;
-    rdfs:label "Dynamuc Object Map"@en;
+    rdfs:label "Dynamic Object Map"@en;
     rdfs:comment "A dynamic object map entry refers to one or more object entries where keys and values are dynamically fed in by a object map."@en;
     rdfs:subClassOf om:ObjectMapEntry;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
 
 om:ArrayMapEntry a rdfs:Class;
-    rdfs:label "Arrat Map Entry"@en;
+    rdfs:label "Array Map Entry"@en;
     rdfs:comment "An array map entry refers to one or more array entries with values."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
 
