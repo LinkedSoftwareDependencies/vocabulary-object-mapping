@@ -47,9 +47,10 @@ om:ObjectMappingEntryDynamic a rdfs:Class;
     rdfs:subClassOf om:ObjectMappingEntry;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
 
-om:ArrayMappingEntry a rdfs:Class;
+om:ArrayMappingEntries a rdfs:Class;
+    owl:sameAs rdf:List;
     rdfs:label "Array Mapping Entry"@en;
-    rdfs:comment "An array map entry refers to one or more array entries with values."@en;
+    rdfs:comment "Array map entries is an RDF lists where each value is a literal or object maping URI."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>.
 
 # ---------------------------------------- Properties --------------------------------------------
@@ -61,22 +62,22 @@ om:field a rdf:Property;
     rdfs:domain om:ObjectMapping;
     rdfs:range om:ObjectMappingEntry.
 
-om:element a rdf:Property;
+om:elements a rdf:Property;
     rdfs:label "has element"@en;
-    rdfs:comment "The given array mapping has the given array map entry."@en;
+    rdfs:comment "The given array mapping has the given elements."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>;
     rdfs:domain om:ArrayMapping;
-    rdfs:range om:ArrayMappingEntry.
+    rdfs:range om:ArrayMappingEntries.
 
 om:fieldName a rdf:Property;
     rdfs:label "has name"@en;
-    rdfs:comment "The given mapping entry has the given field name, which can either be a literal or an object map URI."@en;
+    rdfs:comment "The given mapping entry has the given field name, which can either be a literal or an object mapping URI."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>;
     rdfs:domain om:ObjectMappingEntry.
 
 om:fieldValue a rdf:Property;
     rdfs:label "has value"@en;
-    rdfs:comment "The given mapping entry has the given field value, which can either be a literal or an object map URI."@en;
+    rdfs:comment "The given mapping entry has the given field value, which can either be a literal or an object mapping URI."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabulary/object-mapping#>;
     rdfs:domain om:ObjectMappingEntry.
 
