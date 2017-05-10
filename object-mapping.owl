@@ -21,7 +21,7 @@
     dct:title "Object Mapping"@en;
     dct:issued "2017-05-05"^^xsd:date;
     dct:modified "2017-05-05"^^xsd:date;
-    dct:creator [foaf:mbox "Ruben.Taelman@UGent.be"; foaf:name "Ruben Taelman"].
+    dct:creator [foaf:mbox "Ruben.Taelman@UGent.be"; foaf:name "Ruben Taelman"; owl:sameAs <http://rubensworks.net/#me>].
 
 # ------------------------------------------ Classes --------------------------------------------
 
