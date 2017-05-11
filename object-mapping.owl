@@ -75,7 +75,7 @@ om:fieldValue a rdf:Property;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabularies/object-mapping#>;
     rdfs:domain om:ObjectMappingEntry.
 
-om:collectEntriesFrom a rdf:Property;
+om:collectsEntriesFrom a rdf:Property;
     rdfs:label "has value"@en;
     rdfs:comment "The given mapping entry will collect entries from all resources linked with the given predicate. All of these linked resources will become entries with as key the given object of the entry's om:fieldName predicate and as value the given object of the entry's om:fieldValue predicate."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabularies/object-mapping#>;
