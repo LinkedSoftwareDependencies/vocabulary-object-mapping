@@ -41,10 +41,10 @@ om:ObjectMappingEntry a rdfs:Class;
     rdfs:comment "An object map entry refers to one or more object entries with keys and values."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabularies/object-mapping#>.
 
-om:ArrayMappingEntries a rdfs:Class;
-    owl:sameAs rdf:List;
+om:ArrayMappingElements a rdfs:Class;
+    rdfs:subClassOf rdf:List;
     rdfs:label "Array Mapping Entry"@en;
-    rdfs:comment "Array map entries is an RDF lists where each value is a literal or object maping URI."@en;
+    rdfs:comment "Array map elements is an RDF lists where each value is a literal or object maping URI."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabularies/object-mapping#>.
 
 # ---------------------------------------- Properties --------------------------------------------
@@ -61,7 +61,7 @@ om:elements a rdf:Property;
     rdfs:comment "The given array mapping has the given elements."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabularies/object-mapping#>;
     rdfs:domain om:ArrayMapping;
-    rdfs:range om:ArrayMappingEntries.
+    rdfs:range om:ArrayMappingElements.
 
 om:fieldName a rdf:Property;
     rdfs:label "has name"@en;
