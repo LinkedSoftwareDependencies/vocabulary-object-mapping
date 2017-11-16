@@ -20,7 +20,7 @@
     rdfs:comment "RDF vocabulary for describing Object Mappings that map RDF entities to objects."@en;
     dct:title "Object Mapping"@en;
     dct:issued "2017-05-05"^^xsd:date;
-    dct:modified "2017-05-11"^^xsd:date;
+    dct:modified "2017-11-16"^^xsd:date;
     dct:creator <http://rubensworks.net/#me>.
 <http://rubensworks.net/#me> foaf:name "Ruben Taelman".
 
@@ -73,6 +73,12 @@ om:fieldName a rdf:Property;
 om:fieldValue a rdf:Property;
     rdfs:label "has value"@en;
     rdfs:comment "The given mapping entry has the given field value, which can either be a literal or an object mapping URI."@en;
+    rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabularies/object-mapping#>;
+    rdfs:domain om:ObjectMappingEntry.
+
+om:fieldValueRaw a rdf:Property;
+    rdfs:label "has raw value"@en;
+    rdfs:comment "The given mapping entry has the given raw field value, which can either be a literal or a URI. In both cases, this will be interpreted as a literal."@en;
     rdfs:isDefinedBy <http://linkedsoftwaredependencies.org/vocabularies/object-mapping#>;
     rdfs:domain om:ObjectMappingEntry.
 
